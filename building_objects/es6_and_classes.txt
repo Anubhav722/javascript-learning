@@ -1,0 +1,5 @@
+ES6 AND CLASSES
+
+Yet another new way to create objects
+
+

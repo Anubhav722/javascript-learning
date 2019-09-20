@@ -1,0 +1,2 @@
+VARIABLE ENVIRONMENT
+Where the variables live; And how they relate to each other in memory

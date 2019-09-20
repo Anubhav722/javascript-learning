@@ -1,0 +1,5 @@
+OPERATORS:
+A special function that is syntactically (written) differently
+Generally operators take two parameters and return one result.
+
+

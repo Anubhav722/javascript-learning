@@ -1,0 +1,4 @@
+INVOCATION:
+Running a function. In javascript,by using a parenthesis
+
+Whenever a function is invoked in javascript, a new execution context is created and put on the execution stack.

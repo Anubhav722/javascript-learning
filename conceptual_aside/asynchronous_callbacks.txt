@@ -1,0 +1,8 @@
+ASYNCHRONOUS:
+More than one at a time.
+
+event queue: full of events, notifications of events
+
+so for example we have a click event it gets appended to the queue.
+
+The javascript engine won't look at the click until the execution stack is empty

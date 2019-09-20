@@ -1,0 +1,32 @@
+All objects in javascript have a prototype property. The property is simply a reference to another object. we call it `proto`.
+
+```
+var person = {
+	firstName: 'Default',
+	lastName: 'Default',
+	getFullName: function () {
+	return this.firstName + ' ' + this.lastName;
+	}
+}
+
+
+var john = {
+	firstName: 'John',
+	lastName: 'Doe'
+}
+
+// don't ever do this. For demo purpose only
+
+john.__proto__ = person; // this is how inheritance is done.
+
+console.log(john.getFullName());
+```
+it looks through every object `prototype chain` and works it's way down.
+
+```
+var jane = {
+	firstName: 'Jane'
+}
+jane.__proto__ = person;
+console.log(jane.getFullName());
+```

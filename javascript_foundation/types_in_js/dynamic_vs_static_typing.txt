@@ -1,0 +1,9 @@
+# typescript
+
+we don't have to specify the type of the variable// dynamically typed
+
+for js (dynamically typed)
+var a = 100;
+
+for java (statically typed)
+int a = 100;

@@ -1,0 +1,4 @@
+when we invoke a function we get an execution context, we get two objects, `this` and `arguments`
+
+
+

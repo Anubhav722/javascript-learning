@@ -1,0 +1,13 @@
+What javascript actually does to create an execution context:
+
+Creation and Hoisting
+
+The way execution context is called the creation phase
+
+In that phase we know we have a `global object` which is setup within memory
+We have `this` setup in the memory.
+It recognizes where you've created variables and where you've created functions.
+So it sets up memory space for variables and functions "Hoisting".
+All this means is that before your code begins to be executed line by line, the javascript engine has already set aside memory space for the variables that you've created in that entire code that you've built, and all of the functions that you've created as well. So those functions and variables in memory. So when the code begins to execute line by line, it can access them.
+
+All variables in javascript are initially set to undefined.

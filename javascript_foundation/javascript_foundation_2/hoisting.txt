@@ -1,0 +1,12 @@
+in global execution context creation phase we also have hoisting.
+
+variables and functions are both hoisted.
+
+i.e. even before creation of function definition we can call the function above this.
+
+so javascript engine allocates memory variables and function that is sees in our code during the creation phase and before it executes it.
+
+variables in javascript are partially hoisted. i.e. they are set to undefined before assignment.
+functions are fully hoisted.
+
+variable hoisting can only be done by using var and not by let or const.

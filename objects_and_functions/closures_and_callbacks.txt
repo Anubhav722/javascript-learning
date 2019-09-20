@@ -1,0 +1,31 @@
+```
+function sayHiLater() {
+	var greeting = 'Hi!';
+
+	setTimeout(function() {
+		console.log(greeting);
+	}, 3000);
+}
+```
+
+sayHiLater();
+
+CALLBACK FUNCTION:
+A function you give to another function, to be run when the other function is finished.
+So the function you call (i.e. invoke), `calls back` by calling the function you gave it when it finishes.
+
+
+```
+function tellMeWhenDone (callback) {
+	var a = 1000;
+	var b = 2000;
+
+	callback(); // the 'callback', it runs the function I give it.
+}
+```
+
+tellMeWhenDone(function() {
+	console.log("I am done");
+}
+
+So i called a function by passing in a function and the function I called, in turn called the function I gave it.

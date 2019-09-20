@@ -1,0 +1,110 @@
+call() is similar to calling the function
+
+```
+function a() {
+	console.log('hi')
+}
+```
+a()
+
+is same as a.call()
+
+call() and apply() do the same thing
+
+
+
+```
+const wizard = {
+	name: 'Merlin',
+	health: 100,
+	heal() {
+		return this.health = 100;
+	}
+}
+
+const archer = {
+	name: 'Robinhood',
+	health: 30
+}
+
+```
+
+
+
+to make the health of the archer 100 we can't do this.heal() since they are different objects.
+
+we can use `call()` and `apply()` to borrow the function heal() from the wizard object.
+
+
+example #1 (by using call())
+
+```
+console.log(archer) // output {name: 'Robinhood', health: 30}
+wizard.heal.call(archer)
+console.log(archer) // output {name: 'Robinhood', health: 100}
+```
+
+example # 1 (by using apply)
+
+```
+console.log(archer)
+wizard.heal.apply(archer)
+console.log(archer)
+```
+yields same output as above
+
+
+
+another example of `call()` method by passing parameters to heal function
+
+```
+
+const wizard = {
+	name: 'Merlin',
+	health: 100,
+	heal(num1, num2) {
+		return this.health += num1 + num2
+	}
+}
+
+const archer = {
+	name: 'Robinhood',
+	health: 30
+}
+
+```
+
+example # 2:
+
+```
+console.log(archer) // output: {name:'Robinhood', health: 30} 
+wizard.heal.call(archer, 50, 30) // passing in parameters
+console.log(archer) // output: {name: 'Robinhood', health: 110}
+```
+
+
+In this regard example with `.apply()` 
+
+```
+console.log(archer)
+wizard.heal.apply(archer, [50, 30])
+console.log(archer)
+```
+
+The only difference b/w `call()` and `apply()` is that `call()` takes parameters like: (num1, num2, num3) whereas `apply()` takes parameters like an array `[num1, num2, num3]`
+
+
+`bind()` also can perform the same scenario as above. but unlike `call()` and `apply()`, `bind()` returns a new function with a certain context and parameters. It's usually used when we want a function to be called later on with a certain type of context or certain type of this keyword.
+
+
+
+example # 1 (using bind() here) 
+
+```
+console.log(archer); // output : {name: 'Robinhood', health: 30}
+wizard.heal.bind(archer, 30, 50); // returns a function, it doesn't execute the heal() function
+console.log(archer); // output : {name: 'Robinhood', health: 30}, the output remains the same.
+const healArcher = wizard.heal.bind(archer); // storing the function returned by bind in a variable
+healArcher() // after binding the function we can call the variable to which it was stored.
+console.log(archer) // output : {name: 'Robinhood', health: 110}
+```

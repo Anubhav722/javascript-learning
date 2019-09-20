@@ -1,0 +1,5 @@
+context vs scope
+
+context is object based
+
+scope is function based.

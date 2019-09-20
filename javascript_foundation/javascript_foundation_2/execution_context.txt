@@ -1,0 +1,2 @@
+the js creates a global execution stack for us which contains this, window etc..
+and on top of that adds our created functions

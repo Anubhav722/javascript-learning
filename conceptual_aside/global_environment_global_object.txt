@@ -1,0 +1,8 @@
+The Global Environment
+Whenever code is run in js it's run inside an execution context.
+
+It creates a global object and creates 'this'.
+These two things are created by javascript engine for us.
+These execution context are created by javascript engine.
+Some objects created are: this, window, location.
+

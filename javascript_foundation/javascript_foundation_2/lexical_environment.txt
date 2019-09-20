@@ -1,0 +1,3 @@
+where we write something (code) is called lexical environment. where the path of the function lives.
+
+where var, objects, function live inside the function.

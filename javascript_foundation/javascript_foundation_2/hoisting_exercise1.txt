@@ -1,0 +1,22 @@
+```
+var favoriteFood = "grapes";
+
+var foodThoughts = function (){
+	console.log(favoriteFood);
+	var favoriteFood = "sushi";
+	console.log(favoriteFood);
+}
+
+foodThoughts()
+
+```
+
+The output would be:
+
+```
+undefined
+sushi
+```
+
+From the example we understand that hoisting happens on every execution context.
+Any time we run a function a new execution context gets created and we have to go through the creation phase and execution phase again

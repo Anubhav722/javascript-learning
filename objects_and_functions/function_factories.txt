@@ -1,0 +1,23 @@
+A factory means a function that returns or makes other things for us.
+
+
+```
+function makeGreeting (language) {
+
+	return  function(firstName, lastName) {
+		if (language === 'en') {
+			console.log('Hello ' + firstName + ' ' + lastName);
+		}
+
+		if (language === 'es') {
+			console.log('Hola ' + firstName + ' ' + lastName);
+		}
+	}
+}
+```
+
+
+var greetEnglish = makeGreeting('en');
+var greetSpanish = makeGreeting('es'); 
+
+The above both create a new memory space

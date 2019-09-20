@@ -1,0 +1,58 @@
+All functions in javascript have access to a `call()`, `apply()` and `bind()` method
+
+```
+var person = {
+	firstName: 'John',
+	lastName: 'Doe',
+	getFullName: function() {
+		var fullName = this.firstName + ' ' + this.lastName;
+		return fullName;
+	}
+}
+
+
+
+var logName = function (lang1, lang2) {
+	console.log('Logged: ' + this.getFullName());
+}
+
+
+If we call the `logName()` function directly without using `bind()` method, it will give an error.
+The `this` used inside the anonymous function `function expression`, has it's own local this keyword.
+
+To avoid this error `.bind()` comes into picture.
+
+call the function as follows:
+var logPersonName = logName.bind(person)
+logPersonName();
+
+```
+
+So `.bind()` creates a copy of whatever function you're calling it on.
+
+
+// function borrowing
+
+var person2 = {
+	firstName: "Jane",
+	lastName: "Doe"
+}
+
+console.log(person.getFullName.apply(person2));
+
+
+// function currying
+
+`call()` and `apply()` just pass in the parameters but `bind()` creates a copy of the function
+Also `bind()` doesn't call the function directly, it just creates a copy
+
+function multiply (a,b) {
+	return a * b;
+}
+
+var multiplyByTwo = multiply.bind(this, 2);
+
+
+
+FUNCTION CURRYING:
+Creating a copy of a function but with some preset parameters. Very useful in mathematical situations.

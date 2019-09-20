@@ -1,0 +1,4 @@
+DYNAMIC TYPING
+No need to tell the engine what type of data a variable holds, it figures it out while your code is running.
+
+Variable can hold different types of values because it's all figured out during execution.

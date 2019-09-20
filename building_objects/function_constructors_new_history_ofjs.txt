@@ -1,0 +1,27 @@
+FUNCTION CONSTRUCTORS, 'new', AND THE HISTORY OF JAVASCRIPT
+
+var obj = new Person() // yet another way to create objects
+
+
+
+
+These are actually the right ways to create prototypes.
+```
+function Person() {
+	console.log(this);
+	this.firstName = "John";
+	this.lastName = "Doe";
+	console.log("This function is invoked"); 
+}
+
+var john = new Person(); // this function is getting invoked
+console.log(john);
+```
+
+This is letting us construct an object via a function. We call a function that's used specifically to construct an object. (A function constructor)
+
+
+FUNCTION CONSTRUCTORS:
+A normal function that is used to construct objects.
+The 'this` variable points to a new empty object, and that object is returned from the functio automatically.
+The `new` operator makes the new object. And function constructors are used for adding properties and methods to that new object.

@@ -1,0 +1,56 @@
+
+```
+#1 console.log('1');
+#2 setTimeout(() => {console.log('2')}, 0)
+#3 console.log('3')
+```
+
+output:
+1
+3
+2
+
+
+Reason:
+setTimeout here is basically a web API.
+Line 1 gets added to the `call stack` and after executing it then we removed that call from out `call stack`
+Line 2 gets added to the `call stack` and then immediately the js engine is going to check and say it's a web api. It will just send it to the web API. And it gets removed from the web API.
+Line 3 gets added to the `call stack` and after executing it, we remove it from our `call stack`.
+
+Now behind the scenes the wep api is going to take the setTimeout and start the timer for 1 sec. after the wait time is completed it gets sent to the callback queue and then to the event loop (which keeps checking if the call stack is empty) and then gets sends it to the `call stack` again and hence gets executed.
+
+
+
+Another example:
+
+```
+function achieveNirvana() {
+	console.log('You are enlightened');
+}
+
+function c() {
+	setTimeout(achieveNirvana, 3000);
+}
+
+function b() {
+	c();
+}
+
+function a() {
+	b()
+}
+
+a()
+```
+
+
+steps for execution:
+1. func a gets added to the call stack.
+2. function b gets added to the call stack
+3. func c gets added to the call stack.
+4. setTimeout gets added to the call stack which then gets sent to the web API and the timer starts running.
+5. func c gets removed frm the call stack.
+6. func b gets removed from the call stack.
+7. func a gets removed from the call stack.
+8. When the timer completes, func achieveNirvana gets added to the callback queue.
+9. The callback queue notifies the event loop and asks if it can be added to the `call stack`. The event loop checks if the `call stack` is empty or not. and then adds the func to the `call stack` (if empty) 

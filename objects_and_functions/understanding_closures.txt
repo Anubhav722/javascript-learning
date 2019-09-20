@@ -1,0 +1,17 @@
+function that returns a function
+
+```
+function greet (whattosay) {
+	return function (name) {
+		console.log(whattosay + ' ' + name);
+}
+}
+```
+
+
+greet('Hi')('Tony');
+
+we're invoking a function that returns a function, which we're are again invoking.
+
+Even though the greet function ended, any functions created inside of it when they are called will still have a reference to that greet function memory to what was in it's memory, it's execution context memory space.
+

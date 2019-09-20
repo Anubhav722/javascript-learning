@@ -1,0 +1,32 @@
+examples
+
+var a = new Number(3); // it's a function constructor which creates an object.
+
+var a = new String("John");
+
+var a = new Date("3/1/2015");
+
+can do: returns a list of methods available
+Date.prototype
+String.prototype
+Number.prototype
+
+
+We can also add our own prototype to the built in constructors:
+
+```
+String.prototype.isLengthGreaterThan = function(limit) {
+	return this.length > limit;
+}
+
+console.log("John".isLengthGreaterThan(3));
+```
+
+
+Similarly for Number
+
+```
+Number.prototype.isPositive = function() {
+	return this > 0;
+}
+```

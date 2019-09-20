@@ -1,0 +1,29 @@
+// function statement
+
+function greet(name) {
+	console.log('hello ' + name);
+}
+
+greet();
+
+
+
+// using a function expression
+
+var greetFunc = function (name) {
+	console.log('Hello ' + name);
+};
+
+greetFunc();
+
+
+// immediately invoked function expression (IIFE)
+
+var greeting = function (name) {
+	console.log('Hello ' + name);
+}(); // these parenthesis indicates that the function is invoked immediately after creating it.
+
+
+
+
+

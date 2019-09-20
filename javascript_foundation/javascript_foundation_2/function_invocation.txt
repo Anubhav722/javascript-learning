@@ -1,0 +1,39 @@
+
+// function expression
+// these functions are actually defined during runtime
+var a = function() {
+	console.log('color');
+}
+
+another way to create function expression
+
+var a = () => {
+	console.log('cold');
+}
+
+
+// function declaration
+
+these functions get defined when the compiler reads the code and starts hoisting and memory allocation
+
+function india() {
+	console.log('warm');
+}
+
+
+
+// function invokation
+
+india()
+a()
+
+
+
+// arguments
+
+function marry(person1, person2) {
+	console.log(arguments); // it contains an object, arguments is only available to us when we create a new execution context.
+	// to create an array we do
+	console.log(Array.from(arguments)) // this creates an array so that we can loop now.
+	return `$person1 marriwed to $person2`
+}

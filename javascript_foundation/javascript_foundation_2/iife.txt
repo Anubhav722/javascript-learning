@@ -1,0 +1,39 @@
+IIFE - Immediately invoked Function Expression
+
+(function () {
+
+
+})();
+
+
+
+
+another example to understand IIFE
+
+var script1 = (function () {
+	function a() {
+		return 5;
+}
+
+	return {
+	  a: a,	
+	}
+}
+
+
+function a () {
+
+return "hahaha"
+}
+
+
+
+now calling the above functions would be like
+
+
+a() // output hahaha
+
+
+script1.a() // output 5
+
+

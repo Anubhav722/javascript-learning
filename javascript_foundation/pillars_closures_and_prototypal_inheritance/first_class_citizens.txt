@@ -1,0 +1,9 @@
+functions are first class citizens
+
+var stuff = function(){}
+
+// 2
+function a (fn) {
+	fn()
+}
+

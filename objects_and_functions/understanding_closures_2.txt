@@ -1,0 +1,25 @@
+
+```
+function buildFunctions() {
+	var arr = []
+	for (var i=0; i < 3; i++) {
+		arr.push(
+			function() {
+				console.log(i);
+			})
+}
+	return arr
+}
+```
+
+var fs = buildFunctions()
+
+fs[0]();
+fs[1]();
+fs[2]()
+
+
+The output in all the above three cases will be: 3
+Since the function being pushed to the array is just being created but not being called
+so at the end of the execution stack the value of i would have been 3. (which gets maintained in the global execution context)
+whatever is in the memory still hangs around. In our case it's ``i=3`` and ``arr=[f0, f1, f2]`` 

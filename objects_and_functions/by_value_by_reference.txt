@@ -1,0 +1,3 @@
+when passing values or variables it is pass by value. it creates a copy and new spot in the memory.
+
+when passing  objects as parameters in functions it's pass by reference. References the same spot in memory.

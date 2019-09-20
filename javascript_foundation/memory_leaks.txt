@@ -1,0 +1,22 @@
+
+MEMORY LEAKS
+Ways memory leaks happen
+
+1. Global variable declaration
+ var a = 1
+var b = 2
+var c = 3
+and so on,..
+
+2. Event listener
+
+var element = document.getElementById('button');
+element.addEventListener('click', onClick)
+
+keep adding event listeners..
+
+3. setInterval
+
+setInterval(() => {
+
+}

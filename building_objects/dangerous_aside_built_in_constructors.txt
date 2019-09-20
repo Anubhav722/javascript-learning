@@ -1,0 +1,8 @@
+
+var a = 3
+
+var b = new Number(3);
+
+a == b // returns true
+
+a === b // returns false because a is a primitive whereas b is not a number, it's a object.

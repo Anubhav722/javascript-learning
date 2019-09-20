@@ -1,0 +1,38 @@
+
+
+```
+function Person(firstName, lastName) {
+	console.log(this);
+	this.firstName = firstName;
+	this.lastName = lastName;
+	console.log('This function is getting invoked');
+}
+
+
+var john = new Person('John', 'Doe');
+console.log(john);
+
+var jane = new Person('Jane', 'Doe');
+console.log(jane);
+
+```
+
+When we used the function constructor, it already set the prototype for us.
+
+Every function in javascript is an object. It consists of three things:
+1. code: the code inside function which gets executed when the function is invoked.
+2. name: `name` of the function is optional.
+3. prototype: every function created in javascript has a prototype. (used only by the new operator)
+
+
+
+To add a property to the function we do:
+
+```
+Person.prototype.getFullName = function() {
+	return this.firstName + ' ' + this.lastName;
+}
+```
+
+We could also add this function inside the function object `Person` itself. But it would take up memory.
+Hence Person.Prototype comes to the rescue.

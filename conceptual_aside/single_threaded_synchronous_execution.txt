@@ -1,0 +1,8 @@
+SINGLE THREADED, SYNCHRONOUS EXECUTION
+
+SINGLE THREADED:
+One command at a time
+Under the hood of the browser, maybe not
+
+SYNCHRONOUS:
+One at a time and in order.

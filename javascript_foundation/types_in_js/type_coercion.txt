@@ -1,0 +1,14 @@
+TYPE COERCION
+
+1 == '1' // true
+
+one of them gets converted into equivalent value.
+== does type coercion, whereas === doesn't
+
+1 coerces to true
+0 coerces to false
+
+
+-0 === +0 // true
+
+Object.is(

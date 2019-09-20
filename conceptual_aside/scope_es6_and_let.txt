@@ -1,0 +1,5 @@
+SCOPE:
+Where a variable is available in your code
+And if it's truly a variable, or a new copy
+
+In ES6: Javascript engine `let` allows the javascript engine to use what's called block scoping.

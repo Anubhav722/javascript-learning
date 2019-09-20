@@ -1,0 +1,13 @@
+Function expressions are not hoisted.
+
+ex of function expression:
+
+```
+var anonymousGreet = function () {
+	console.log("Hi");
+}
+
+anonymousGreet()
+```
+
+functions can also be passed in the functions as parameters in javascript just like variables.

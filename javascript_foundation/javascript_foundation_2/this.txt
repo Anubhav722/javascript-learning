@@ -1,0 +1,52 @@
+this is the object that the function is a property of
+
+gets set during our execution context
+
+ES6 has 'use strict' by default.
+
+```
+const obj = {
+	name: "Billy",
+	sing: function() {
+	  return 'lalala' + this.name;
+	},
+	singAgain: function() {
+	  return this.sing() + ' singing now';
+	}
+}
+
+
+obj.sing()
+```
+
+
+1. it gives methods access to their object.
+2. execute the same code for multiple objects.
+
+
+in short this refers to whatever is on the left.
+
+
+
+
+explaining the point 2.
+
+function importPerson() {
+	console.log(this.name;
+}
+
+const name = 'Sunny';
+const obj1 = {
+	name: 'Jacob',
+	importantPerson: importantPerson
+}
+
+const obj2 = {
+	name: 'Cassy',
+	importantPerson: importantPerson
+}
+
+importantPerson() // output Sunny, it is actually doing window.importantPerson()
+obj1.importantPerson() // output Jacob
+obj2.importantPerson() // output Cassy
+

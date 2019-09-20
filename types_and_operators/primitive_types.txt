@@ -1,0 +1,12 @@
+PRIMITIVE TYPES:
+A type of data that represents a single value
+
+That is not an object.
+
+1. undefined: represents lack of existence (you shouldn't set a variable to this)
+2. null: represents lack of existence (you can set a variable to this)
+3. boolean: true of false
+4. number: floating point number (there's always some decimals)
+5. string: a sequence of characters.
+6. symbol: Used in ES6 (the next version of javascript)
+
