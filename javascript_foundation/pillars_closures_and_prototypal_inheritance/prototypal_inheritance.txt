@@ -1,0 +1,54 @@
+let dragon = {
+	name: 'Tanya',
+	fire: true,
+	fight() {
+	  return 5
+	}
+	sing() {
+	  if (this.fire) {
+	    return 'I am $(this.name), the breather of fire'
+	  }
+	}
+}
+
+
+let lizard = {
+	name: 'Kiki',
+	fight() {
+	  return 1
+	}
+}
+
+
+borrow a function from dragon using bind
+const singLizard = dragon.sing.bind(lizard)
+
+dragon.sing()
+
+
+
+but we can also borrow properties and methods using prototypal inheritance
+
+// lizard inherits from dragon
+lizard.__proto__ = dragon
+lizard.fight
+lizard.sing()
+lizard.fire
+// we created a prototype chain from  above example
+
+
+for (let prop in lizard) {
+	if (lizard.hasOwnProperty()) {
+		console.log(prop)
+	}
+}
+
+
+// this isn't the same as scope chain, these are prototype chains
+
+
+const obj = {name: 'Sally'}
+obj.hasOwnProperty('name') // true
+
+
+

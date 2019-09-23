@@ -1,0 +1,11 @@
+function callMeMaybe() {
+	setTimeout(function() {
+		console.log(callMe);
+	}, 4000);
+	const callMe = 'HI i am here'
+}
+
+callMeMaybe();
+
+
+//output: HI i am here

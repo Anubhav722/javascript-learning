@@ -1,0 +1,26 @@
+Explain the difference b/w synchronous and asynchronous javascript
+
+OR
+Javascript is a single threaded language that can be non-blocking
+
+
+
+WHAT IS A PROGRAM?
+- Allocate memory
+- parse and execute
+
+JAVASCRIPT ENGINE
+- memory heap
+- call stack
+
+
+
+Single threaded means that it has a only one call stack only one thing at a time. follow (first in last out)
+
+stack overflow can happen due to memory heap being populated.
+
+async:
+
+setTimeout(() => {
+	console.log('2');
+}, 2000)

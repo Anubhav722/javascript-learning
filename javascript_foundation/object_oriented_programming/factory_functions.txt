@@ -1,0 +1,86 @@
+const elf = {
+	name: 'Orwell',
+	weapon: 'bow',
+	attack() {
+		return 'attack with ' + elf.weapon;
+	}
+}
+
+
+const elf2 = {
+	name: 'Sally',
+	weapon: 'bow',
+	attack() {
+		return 'attack with ' + elf2.weapon;
+	}
+}
+
+// the above doesn't follow DRY principle
+
+// FACTORY FUNCTIONS
+// they create objects for us.
+
+function createElf(name, weapon) {
+	return {
+	  name: name,
+	  weapon: weapon,
+	  attack() {
+		return 'attack with ' + weapon
+	  }
+	}
+}
+
+const peter = createElf('Peter', 'stones')
+peter.attack()
+const sam = createElf('Sam', 'fire')
+sam.attack()
+
+
+
+// the function attack() is generic and is being created multiple times for each object.
+// another way to make it generic is:
+
+const elfFunctions = {
+	attack() {
+	  return 'attack with ' + this.weapon;
+	}
+}
+
+
+const peter = createElf('Peter', 'stones')
+peter.attack = elfFunctions.attack
+peter.attack()
+const sam = createElf('Sam', 'fire')
+sam.attack = elfFUnctions.attack
+sam.attack()
+
+
+
+/// using Object.create()
+instead of manually attaching the methods to the variables we can use Object.create()
+
+
+const elfFunctions = {
+	return function() {
+	  return 'attack with ' + this.weapon;
+	  }
+}
+
+function createElf(name, weapon) {
+	let newElf = Object.create(elfFunctions)
+	newElf.name = name;
+	newElf.weapon = weapon;
+	return newElf
+}
+
+const peter = createElf('Peter', 'stones')
+const sam = createElf('Sam', 'fire')
+
+console.log(peter.attack())
+console.log(sam.attack())
+
+
+
+
+
+

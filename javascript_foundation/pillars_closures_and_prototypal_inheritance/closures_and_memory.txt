@@ -1,0 +1,45 @@
+// memory efficient
+
+function heavyDuty(index) {
+	const bigArray = new Array(7000).fill('a');
+	console.log('created !!')
+	return bigArray[index]
+}
+
+heavyDuty(700)
+heavyDuty(500)
+heavyDuty(400)
+
+ // output: created
+	    created
+	    created
+	    a
+
+When we are calling the above function multiple times it becomes hectic. when it's being accessed a lot of times
+creating the array again and again
+
+
+// closure implementaion to our problem
+
+function heavyDuty() {
+	const bigArray = new Array(7000).fill('a')
+	console.log('created')
+	return function(index) {
+		return bigArray[index]
+	}
+}
+
+const getHeavyDuty = heavyDuty()
+getHeavyDuty(500)
+getHeavyDuty(600)
+getHeavyDuty(800)
+
+// output: created
+	   a
+
+
+It gets created only once and is memory efficient. It is only referencing the original array on every function call
+
+
+// encapsulation
+

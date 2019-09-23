@@ -1,0 +1,5 @@
+1. encapsulation - wrapping up the code
+2. abstraction - hiding the properties from the user
+3. inheritance - 
+4. polymorphism - many forms of the methods.
+

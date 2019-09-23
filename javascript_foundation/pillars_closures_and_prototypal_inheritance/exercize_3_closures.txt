@@ -1,0 +1,41 @@
+const array = [1,2,3,4]
+
+for (var i=0; i < array.length; i++) {
+	setTimeout(function() {
+		console.log(i);
+	}, 3000)
+}
+
+
+// output: 4
+	   4
+	   4
+	   4
+
+
+
+to solve the above the problem
+
+const array = [1,2,3,4]
+for (let i=0; i< array.length; i++) {
+	setTimeout(function() {
+		console.log(i)
+	}, 3000)
+}
+
+// output: 0
+	   1
+	   2
+	   3
+
+
+// another way to solve this problem if we cannot use `let` keyword. using (IIFE)
+
+const array = [1,2,3,4]
+for (var i=0; i < array.length; i++) {
+	(function(closureI) {
+	setTimeout(function() {
+		console.log(closureI);
+	}, 3000)
+	})(i)
+}

@@ -1,0 +1,21 @@
+returns the same output given the same input
+
+const arr = [1,2,3]
+
+function a (arr) {
+	arr.pop()
+}
+a(arr)
+
+
+the array gets modified and hence returns diff output.
+
+
+modifying the above function like this:
+
+function b (arr) {
+	const newArray = [].concat(arr);
+	newArray.pop()
+	return newArray
+}
+

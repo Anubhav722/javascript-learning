@@ -1,0 +1,86 @@
+A promise is an object that may produce a single value some time in the future.
+Either a resolved value or a reason that is not resolved.(rejected)
+
+
+can occur in three possible states:
+1. fulfilled
+2. pending
+3. rejected
+
+
+before promises we had callbacks (which are nested functions being called)
+
+code without promises:
+
+```
+movePlayer(100, 'Left', function() {
+	movePlayer(240, 'Right', function() {
+		movePlayer(300, 'Up' function() {
+		});
+	})
+});
+```
+
+
+code with promises
+
+```
+movePlayer(100, 'Left')
+	.then(() => movePlayer(240, 'Right'))
+	.then(() => movePlayer(300, 'Up'))
+```
+
+
+introduction
+
+
+
+const promise = new Promise((resolve, reject) => {
+	if (true) {
+		resolve('stuff worked');
+	} else {
+		reject('error, it broke');
+	}
+})
+
+
+promise.then(result => console.log(result))
+
+
+
+promise
+    .then(result => result + '!')
+    .then(result2 => {
+	throw Error
+	console.log(result2);
+    })
+    .catch(() => console.log('errror'))
+
+promises are good for async programming
+
+
+Promise.all() takes an array of promises.
+
+
+
+
+live example of promises:
+
+const urls = [
+	'https://jsonplaceholder.typicode.com/users',
+	'https://jsonplaceholder.typicode.com/posts',
+	'https://jsonplaceholder.typicode.com/albums'
+]
+
+
+Promise.all(urls.map(url => {
+	return fetch(url).then(resp => resp.json())
+})).then(results => {
+	console.log(results[0]);
+	console.log(results[1]);
+	console.log(results[2]);
+}).catch(console.log('error'))
+
+
+
+

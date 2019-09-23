@@ -1,0 +1,10 @@
+// Idempotence
+
+function notGood() {
+	return Math.random();
+}
+
+notGood()
+
+
+idempotence is same as pure functions.

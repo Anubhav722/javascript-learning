@@ -1,0 +1,42 @@
+// preventing a function being called multiple times usng closures
+// can be thought of as a rate limiter
+
+```
+let view
+function initialize() {
+	view = 'this is view'
+	console.log('VIEW HAS BEEN SET');
+}
+```
+
+initialize()
+initialize()
+initialize()
+console.log(view)
+
+// The above function is being called multiple times. we need to prevent such a behaviour using closures.
+// it should be called only once.. another time the view is being set do something from the `view` being set again and again
+
+
+SOLUTION:
+
+```
+let view;
+function initialize() {
+	let called = 0;
+	return function() {
+		if (called > ) {
+			return "you are retrying to set the view"
+		}
+		else {
+			called ++;
+			view = 'this is view'
+			console.log('VIEW HAS BEEN SET')
+		}
+	}
+}
+```
+
+const startOnce = initialize();
+startOnce()
+

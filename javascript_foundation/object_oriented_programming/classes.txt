@@ -1,0 +1,31 @@
+function Elf(name, weapon) {
+	this.name = name;
+	this.weapon = weapon;
+}
+
+
+Elf.prototype.attack = function() {
+	return 'attack with ' + this.name;
+}
+
+const peter = new Elf('Peter', 'stones');
+
+
+// introduction to classes ES6
+
+class Elf {
+	constructor(name, weapon) {    // think of it as a __init__ function
+	  this.name = name;
+	  this.weapon = weapon;
+	}
+	attack() {
+	  return 'attack with ' + this.weapon;
+	}
+}
+
+
+// object instantiation
+const peter = new Elf('Peter', 'stones');
+console.log(peter.attack())
+
+

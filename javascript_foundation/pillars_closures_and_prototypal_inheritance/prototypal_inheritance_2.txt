@@ -1,0 +1,14 @@
+let human = {
+	mortal: true
+}
+
+let socrates = Object.create(human)
+
+socrates.age = 45
+console.log(socrates.mortal) // true
+console.log(socrates.isPrototypeOf(socrates)); // true
+
+
+Only functions have the prototypal property
+
+__proto__ points to prototype object
